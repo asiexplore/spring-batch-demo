@@ -1,7 +1,5 @@
 package com.example.springbatchdemo.entity;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -16,7 +14,7 @@ public class UserEntity {
 	
 	private String dept;
 	
-	private BigDecimal account;
+	private Long account;
 
 	public Long getUserId() {
 		return userId;
@@ -42,11 +40,11 @@ public class UserEntity {
 		this.dept = dept;
 	}
 
-	public BigDecimal getAccount() {
+	public Long getAccount() {
 		return account;
 	}
 
-	public void setAccount(BigDecimal account) {
+	public void setAccount(Long account) {
 		this.account = account;
 	}
 }

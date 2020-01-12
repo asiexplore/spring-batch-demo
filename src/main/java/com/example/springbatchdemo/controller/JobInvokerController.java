@@ -23,6 +23,10 @@ public class JobInvokerController {
     @Qualifier("dbToCSVLoader")
     Job dbToCSVLoader;
     
+    @Autowired
+    @Qualifier("apiToDBLoader")
+    Job apiToDBLoader;
+    
     @RequestMapping("/load-csv-to-db")
     public String loadCsvToDb() throws Exception {
  
@@ -41,6 +45,18 @@ public class JobInvokerController {
             								.addString("source", "Spring Boot")
             								.toJobParameters();
             jobLauncher.run(dbToCSVLoader, jobParameters);
+            
+        return "Batch job has been invoked";
+    }
+
+    
+    @RequestMapping("/load-api-to-db")
+    public String loadApiToDb() throws Exception {
+ 
+            JobParameters jobParameters = new JobParametersBuilder()
+            								.addString("source", "Spring Boot")
+            								.toJobParameters();
+            jobLauncher.run(apiToDBLoader, jobParameters);
             
         return "Batch job has been invoked";
     }
