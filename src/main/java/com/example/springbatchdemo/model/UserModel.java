@@ -41,4 +41,9 @@ public class UserModel {
 	public void setAccount(Long account) {
 		this.account = account;
 	}
+
+	@Override
+	public String toString() {
+		return "UserModel [userId=" + userId + ", name=" + name + ", dept=" + dept + ", account=" + account + "]";
+	}
 }

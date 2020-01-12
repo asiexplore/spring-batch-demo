@@ -29,7 +29,7 @@ public class UserApiReader implements ItemReader<UserModel> {
 
     @Override
     public UserModel read() throws Exception {
-        LOGGER.info("Reading the information of the next User");
+        LOGGER.info("Reading the information of the next User : " + nextUserIndex);
 
         if (this.userList == null) {
             userList = readUsersFromApi();

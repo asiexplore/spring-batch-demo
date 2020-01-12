@@ -31,7 +31,7 @@ public class JobInvokerController {
     public String loadCsvToDb() throws Exception {
  
             JobParameters jobParameters = new JobParametersBuilder()
-            								.addString("source", "Spring Boot")
+            								.addLong("time",System.currentTimeMillis())
             								.toJobParameters();
             jobLauncher.run(csvToDBLoader, jobParameters);
             
@@ -42,7 +42,7 @@ public class JobInvokerController {
     public String loadDbToCsv() throws Exception {
  
             JobParameters jobParameters = new JobParametersBuilder()
-            								.addString("source", "Spring Boot")
+            								.addLong("time",System.currentTimeMillis())
             								.toJobParameters();
             jobLauncher.run(dbToCSVLoader, jobParameters);
             
@@ -54,7 +54,7 @@ public class JobInvokerController {
     public String loadApiToDb() throws Exception {
  
             JobParameters jobParameters = new JobParametersBuilder()
-            								.addString("source", "Spring Boot")
+            								.addLong("time",System.currentTimeMillis())
             								.toJobParameters();
             jobLauncher.run(apiToDBLoader, jobParameters);
             
